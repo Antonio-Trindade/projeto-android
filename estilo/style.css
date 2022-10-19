@@ -1,0 +1,241 @@
+@charset "UTF-8";
+@font-face {
+    font-family:'Android';
+    src: url('fontes/idroid.otf');
+}
+
+/*Criando Variaveis com Root*/
+:root{
+    --cor0:#c5ebd6;
+    --cor1:#83e1ad;
+    --cor2:#3ddc84;
+    --cor3:#2fa866;
+    --cor4:#1a5c37;
+    --cor5:#063d1e;
+--fonte-padrao: Arial, Verdana, Helvetica,sans-serif;
+--fonte-android: 'Android';
+}
+
+
+*{ /*Formatação Global para tirar a margin e espaçamento de toda a pagina */
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+
+/*No corpo da Pagina foi definido uma cor e fonte, cuja fonte foi usada da importação e torno-se 
+uma variavel*/
+body{
+    background-color:#c5ebd6;
+    font-family:var(--fonte-padrao);
+    
+}
+
+
+/*usou o tag <a link> qual tem uma classe chamada 'externo' onde foi usado os PSDELEMENTOS os quais
+adicionam elementos aos periféricos através da Propriedade "content"  */
+a.externo::after{
+    content: '\00A0\1F517'  /*00A0 -> Espaço | 1F517 -> Elemento Inserido "figurinha de clip"  */
+}
+
+
+
+
+
+header{ /*Area do Cabeçalho*/
+    background-color: var(--cor4); /*Definindo cor de Fundo do Cabecalho, cor declarada na variavel ROOT:*/
+    min-height: 150px;             /*Definiu a Altura Minima Para o Cabeçalho */
+    text-align: center;            /*Definiu o Texto do Cabecalho no Centro*/
+    padding-top: 40px;             /*Espaçamento Entre o Topo de Cabeçalho da Ca*/
+    background-image: linear-gradient(to bottom,var(--cor2),var(--cor5)); /* Cor em Degradê no Cabecalho */
+}
+
+header > h1{                       /*Formantando os textos em <h1> no Cabeçalho*/
+    color:white;                 /*Definiu a cor do testo em branco*/
+    margin-bottom: 20px;           /*Definiu Uma Margem-Baixa de 20 px*/
+    font-size: 3em;                /*Definiu o tamanho da fonte em 3EM*/
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.425);/*Criou uma Sombra Transparente (RGBA) ao redor do texto */
+    font-weight: normal;           /*Definiu a forma da fonte em normal*/
+      
+}
+
+header > p{                        /*Formatando somente as tag de <p> Parágrafos do cabeçalho */
+    color:white;                 /*Definiu a Cor Branca Para*/
+    font-size: 1.2em;              /*Definiu o tamanho da fonte em 1.2EM*/
+    width: 500px;                  /*Definiu o Tamanho da Caixa do Parágrafo*/
+    margin: auto;                  /*Definiu a Margem da Caixa do Parágrafo*/
+    padding-right: 10px;           /*Definiu o Espaçamento Direito do Paragrafo*/
+    padding-left: 10px;            /*Definiu o Espaçamento Esquerdo do Parágrafo*/
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.452); /*Definiu uma sombra-transparente na borda do texto*/
+}
+
+nav{                               /* Area destinada a Navegação ou Seja é o Menu*/
+    background-color: var(--cor5); /*Definiu a Cor de Fundo Menu de Verde Através da Variavel --cor5*/
+    padding: 10px;                 /*Espaçamento nas laterais de 10px*/
+    box-shadow: 0px 7px 7px black;/*Definiu Uma Sombra na Caixa do Nav*/
+
+}
+
+
+nav>a{                             /*Formatando Somente a tag <a herf> no Nav, ou seja os botões do MENU*/
+    color: white;                /*Definiu a cor do texto dos Botões*/
+    padding: 10px;                 /*Definiu os Espaçamento entre os elementos*/
+    text-decoration: none;         /*Retirou o Sublinhado do LINK do MENU*/
+    border-radius: 5px;            /*Definiu um arredondamento no Botão de 5px*/
+    font-weight: bold;             /*Definiu a fonte do Texto em Negrito*/
+    transition-duration: .3s;      /*Definiu um tempo de Transição Ao sair e entrar em outro no botão*/
+
+}
+
+
+nav >a:hover{                      /*Formatando os links <a href> que são botões do Menu
+                                    através de   seus   estados      "pseud-classes" (:) se esta ativo, Marcado ou se ou mouse passou por cima*/
+    background-color: var(--cor3);/*Definiu a Cor do Fundo em --cor3*/
+    color: var(--cor5);           /*Deficiu a Cor do Texto em --cor5 */
+
+}
+
+main{                             /*Fomantando o Conteudo Principal, o Corpo da Pagina*/
+    background-color: white;    /*Definiu a Cor do Fundo da Pagina em Branco*/
+    min-width: 300px;             /*Definiu o Tamanho Minimo da Caixa Main, Onde Está o Conteúdo Princiapl*/
+    max-width: 1000px;            /*Definiu o Tamanho Maximo da Caixa Main, Onde Está o Conteúdo Princiapl*/
+    margin:auto;                  /*Definiu a Margem da Caixa em Automatico*/
+    padding: 20px;                /*Definiu o Espaçamento da Margem em 20px */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.308); /*Definiu uma Borda na Caixa do Main*/
+    margin-bottom: 30px;          /*Definiu Uma Margem da Area de Baixo do Caixa do Main*/
+    border-bottom-left-radius: 10px;/*Definiu Margem Arredondada Somente na Parte Inferior Direita em 10px*/
+    border-bottom-right-radius:10px ;/*Definiu Margem Arrendonda Somente na Parte Inferior Esquerda em 10px*/
+}
+
+main img{                          /*Definiu a Imagem dentro do Corpo em 100%*/
+    width: 100%;
+
+}
+
+div.video {                        /*Foi Criado Uma DIV Para Ajustar o Video Incorporado do YouTube que     
+                                recebeu o nome da classe de "video"*/
+
+    background-color: var(--cor5); /*Definiu a Cor de Fundo da Caixa da DIV*/
+    margin: 0px -20px 30px;        /*Definiu a Margem da Caixa da DIV*/
+    padding: 20px;                 /*Definiu o Espaçamento da Caixa da DIV*/
+    position: relative;            /*Definiu a posição Relativa*/
+    padding-bottom: 57%;           /*Definiu um Espaçamento Inferior da Borda de 57%*/
+
+}
+
+div.video > iframe{             /*Modificando o Video através da classe "video" atrelada ao <iframe> cujo foi 
+                                incorporado do Youtube Diretamente*/
+    position: absolute;         /*Definiu a Posição Relativa do Iframe*/ 
+    top: 5%;                    /*Definiu a Posição Superior em 5%*/             
+    left: 5%;                   /*Definiu a Posição Inferior em 5%*/
+    width: 90%;                 /*Definiu a Largura do Iframe em 90% dentro da Caixa da Div*/
+    height:90%;                 /*Definiu a Altura do Iframe em 90% dentro da Caixa da Div*/
+}
+
+
+
+main img.pequena{               /*Modificando o Tamanho da Imagem-Pequena Inseria no MAIN*/
+    width: 50%;                 /*Definindo o Tamanho da Caixa da Imagem*/
+    display: block;             /*Definiu a Imagem como Blok*/
+    margin:auto;                /*Definu a Margem da Imagem como Automatica Para Ajustar(Responsividade)*/
+
+}
+
+
+main h1{                        /*Formantando as Tags <h1> que se encontram dentro do MAIN*/
+    color:var(--cor5);          /*Definiu a Cor do Texto para --cor5 onde se encontra na Variaveis Declarada*/
+    font-family: var(--fonte-android);  /*Definiu a Fonte para --fonte-android onde foi declarada na VARIA */
+    font-weight: normal;        /*Definiu a espessura da Fonte para Normal*/
+   
+}
+
+main h2{                        /*Formatando as Tags <h2> que se encontram dentro do MAIN*/
+    font-family:var(--fonte-android); /*Definiu a Fonte --fonte-android para a tag*/
+    color: var(--cor4);               /*Definiu a Cor --cor4 para o texto*/
+    font-size: 1.3em;                 /*Definiu o Tamanho do Texto em 1.3EM*/
+    background-image: linear-gradient(to right, var(--cor1), transparent);  /*Definiu uma cor Degrade com 
+                                                                                 Final Transparente*/
+    text-indent: 8px;                 /*Local do texto dentro Caixa do H2*/
+    font-weight: normal;              /*Definiu a Espessura do Texto Para o Tamanho Norma*/
+}
+
+main p{                              /*Formantando as tags <p> Parágrafo entro do MAIN*/
+    margin:15px 0px;                 /*Definiu a Margem da Caixa <p>*/
+    text-align: justify;             /*Definiu o Texto Alinhado de Forma Justificada*/
+    text-indent: 30px;               /*Definiu um espaçamento inicial para o Parágrafo*/
+    line-height: 2em;                /*Definiu um espaçamento entre as linhas no Parágrafo*/
+    font-size: 1em;                  /*Definiu o Tamanho da Fonte no Parágrafo*/
+}
+            
+main strong{                         /*Formatando as Tagas <Strong> no MAIN*/
+    color:var(--cor4);               /*Definindo a Cor do Texto em --cor4*/
+    font-weight: bold;               /*Definindo a Espessura do Texto em BOLD (negrito)*/
+
+}
+
+main a{                              /*Formatando as tagas de Link <a href> dentro do MAIN*/
+    text-decoration: none;           /*Retirou o Sublinhado do Texto*/
+    font-weight: bold;               /*Definiu a Fonte na Espessura Mais Forte (Negrito)*/
+    color:var(--cor5);               /*Definiu a Cor da Fonte em --cor5*/
+    background-color: var(--cor1);   /*Definiu a cor de Fundo da Tag em --cor1*/
+    padding: 2px 6px;                /*Definiu um Espassamento da Caixa do Link <a href> para ressaltar
+                                     a Cor do Link*/
+}
+
+main a:hover{                        /*Definindo as Ações Através da PSEDEUCLASSE HOVER (:)*/
+    text-decoration: underline;      /*Ao Passar o Mouse por Cima do Link ele será Sublinhado automatico*/
+    color:var(--cor4);               /*Ao Passar o Mouse por Cima do Link ele Mudara para a cor 4*/
+}
+
+aside{
+    background-color: var(--cor1);  /*Modificando o Campo Perificado ao Conteudo Principal (Informação Extra)*/
+    padding: 10px;                  /*Definiu Um Espaçamento da Caixa do Aside em 10px*/
+    border-radius: 10px;            /*Definiu Um Arredondamento do Borda da Caixa do ASIDE*/
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.281) ;  /*Definiu Uma Leve Sombra Preta Transparente*/
+}
+
+aside > h3{                         /*Modificando os Texto em <h3> dentro do Aside*/
+    background-color: var(--cor4);  /*Definiu a cor, --cor4 como Fundo*/
+    color:white;                  /*Definiu a cor do Texto de Branco*/
+    margin:-10px -10px -0 -10px;    /*Definiu Uma Margem para os Textos*/
+    border-radius: 10px 10px 0px 0px; /*Definiu Uma Borda Arrendondada Para os Lados Superiores Esquerda e 
+                                       Direita*/
+    padding: 10px;                     /*Definiu Um Espaçamento de 10px para a Caixa <h3>*/
+
+
+
+}
+
+aside > ul{                         /*Modificando as Listas Dentro do ASIDE*/
+    list-style-position: inside;    /*Difiniu que o Estilo de Lista Fique Dentro do ASIDE*/
+    list-style-type: '\2714\00A0\00A0'; /*Difiniu Um outro Estivo Para representar a Lista (emoticom)*/
+    columns:2;                      /*Separou O Conteudo da Lista em Duas Colunas*/
+
+
+
+}
+
+
+footer{                             /*Modificando o Rodapé da Pagina*/
+    background-color: var(--cor5);  /*Definiu a Cor de Fundo Para O Rodapé*/
+    color:white;                  /*Definiu a Cor do Texto Branco Para o Rodapé*/
+    text-align: center;             /*Definiu o Texto Alinhado no Centro*/
+    font-size: 0.8em;               /*Definiu o Tamanho da Fonte do Texto em 0.8EM*/
+    padding: 5px;                   /*Definiu o Tamanho do Espaçamento do Rodapé em 5px*/
+
+}
+
+
+footer a{                           /*Modificando o Link <a href> dentro do Rodapé*/
+    color:white;                  /*Definiu a Cor Branca para os Links*/
+    font-weight: bolder;            /*Definiu a Espessura do Texto para Mais Forte (Negrito)*/
+    text-decoration: none;          /*Retirou o Sublinhado dos Links*/
+}
+
+footer a:hover{                     /*Modificando o Rodapé ao Ter o Comportamento do Mouse em Cima*/
+    text-decoration: underline;     /*Ao Passar o Mouse por Cima o Texto Será Sublinhado Automaticamente*/
+    color:var(--cor1);              /*Ao Passar o Mouse por Cima o Texto Mudará de Cor para a --cor1*/
+
+}
